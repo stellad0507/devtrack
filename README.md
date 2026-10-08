@@ -98,20 +98,16 @@ JSON files were used instead of a database because the assignment explicitly req
 
 ## Postman testing
 
-Screenshots live in the `screenshots/` folder:
+Screenshots are in the `screenshots/` folder.
 
-```
-screenshots/
-├── issue-create-success.png
-└── issue-validation-failure.png
-```
+**Successful request – create reporter** (`POST /api/reporters/` → `201 Created`):
 
-**Successful request** – `POST /api/issues/` returning `201`:
+![Reporter created](screenshots/success.png)
 
-![Issue created successfully](screenshots/issue-create-success.png)
+**Successful request – create critical issue** (`POST /api/issues/` → `201 Created`, with the `[URGENT]` message from `CriticalIssue.describe()`):
 
-**Validation failure** – `POST /api/issues/` with an empty title returning `400`:
+![Issue created](screenshots/success-post.png)
 
-![Issue validation failure](screenshots/issue-validation-failure.png)
+**Failed request – validation error** (`POST /api/issues/` with an empty title → `400 Bad Request`):
 
-> The screenshots have not been added yet; save the two Postman screenshots with the names above.
+![Validation failure](screenshots/fail.png)
